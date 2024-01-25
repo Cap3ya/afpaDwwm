@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwwm - Contact</title>
+    <meta name="description" content="Site dédié à la formation Developpeur Web et Web Mobile délivrée par l'AFPA.">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link href="../style.css" rel="stylesheet">
+</head>
+<body>
+    <header class="flex-row">
+        <div class="flex-row">
+        <img 
+            src="../images/logo.jpeg"
+            alt="logo afpa" 
+            width="139" 
+            height="72"
+        >
+        <nav>
+            <input type="checkbox" id="toggle">
+            <label for="toggle"><span></span></label>
+
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="./formation.html">
+                        Formation
+                    </a>
+                </li>
+                <li>
+                    <a href="./temoignages.html">
+                        Témoignages
+                    </a>
+                </li>
+                <li>
+                    <a href="./references.html">
+                        Références
+                    </a>
+                </li>
+                <li>
+                    <a href="./contact.html">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <h1>Notre Formulaire</h1>
+    <h2>Pour nous contacter</h2>
+    <main id="contact" class="flex-column">
+        <div>
+            <small>
+                <span class="color-red">
+                    *
+                </span>
+                information obligatoire
+            </small>
+            <form action="#" id="formContact">
+                <label for="nom" class="bold">
+                    <span class="color-red">
+                        *
+                    </span>
+                    Nom:
+                </label>
+                <input id="nom" type="text" pattern="[A-Za-z]*" required>
+                <label for="email" class="bold">
+                    <span class="color-red">
+                        *
+                    </span>
+                    Email:
+                </label>
+                <input id="email" type="email" required>
+                <label for="tel" class="bold">
+                    Téléphone:
+                </label>
+                <input id="tel" type="tel" pattern="[0-9]{10}" >
+
+                <fieldset>
+                    <legend class="bold">
+                        Situation:
+                    </legend>
+                    <div>
+                        <input id="demandeurEmploi" value="demandeurEmploi" type="radio" name="situation" checked>
+                        <label for="demandeurEmploi">Demandeur d'emploi</label>
+                    </div>
+                    <div>
+                        <input id="transition" value="transition" type="radio" name="situation">
+                        <label for="transition">Salarié en transition professionnelle</label>
+                    </div>
+                    <div>
+                        <input id="autre" value="autre" type="radio" name="situation">
+                        <label for="autre">Autre</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="bold">
+                        Modalités d'apprentissage privilégiées:
+                    </legend>
+                    <div>
+                        <input id="presentiel" value="presentiel" type="radio" name="modalite" checked>
+                        <label for="presentiel">En centre de formation (présentiel)</label>
+                    </div>
+                    <div>
+                        <input id="distance" value="distance" type="radio" name="modalite">
+                        <label for="distance">100% à distance</label>
+                    </div>
+                    <div>
+                        <input id="alternance" value="alternance" type="radio" name="modalite">
+                        <label for="alternance">En contrat d'alternance avec l'entreprise</label>
+                    </div>
+                    <div>
+                        <input id="indifferent" value="indifferent" type="radio" name="modalite">
+                        <label for="indifferent">Sans préférence</label>
+                    </div>
+                </fieldset>
+
+                <label for="regionOrigine" class="bold">
+                    Région d'origine:
+                </label>
+                <select name="region" id="regionOrigine">
+                    <option value="">
+                        --Veuillez choisir une région
+                    </option>
+                    <option value="alsace">
+                        Alsace
+                    </option>
+                    <option value="bretagne">
+                        Bretagne
+                    </option>
+                    <option value="aquitaine">
+                        Aquitaine
+                    </option>
+                    <option value="auvergne">
+                        Auvergne
+                    </option>
+                </select>
+            </form>
+        </div>
+        <input type="submit" value="Envoyer" form="formContact"> 
+    </main>
+    <footer>
+        <p>&copy; Copyright 2023. All right reserved.</p>
+    </footer>
+</body>
+</html>

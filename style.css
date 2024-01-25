@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --green-color: #78BE20;
+    --pink-color: #EF4A81;
+    --yellow-color: #FFD100;
+    --blue-color: #418FDE;
+}
+body {
+    font-family: Arial, system-ui;
+    min-height: 100vh;
+    font-size: 1.05em;
+
+    display: flex;
+    flex-direction: column;
+}
+header {
+    padding: .5em;
+    border-bottom: 15px solid var(--green-color);
+    & div {
+        width: min(100%, 1200px);
+        justify-content: space-around !important;
+        & nav {
+            & ul {
+                gap: 1rem;
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            & li {
+                list-style: none;
+                font-size: 1.1em;
+                font-weight: 600;
+            }
+            & li:is(:hover, :active) {
+                border-bottom: 2px solid black;
+            }
+        }
+    }
+}
+main {
+    flex: 1;
+    margin: 2em 0;
+}
+footer {
+    padding: .5em 0;
+    text-align: center;
+    background-color: var(--green-color);
+}
+/*HEADING*/
+h1, h2, h3, h4 {
+    text-align: center;
+}
+h1, h2 {
+    margin: .5em 0;
+}
+h3 {
+    padding: .2em;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/*BUTTON*/
+input[type="submit"] {
+    background-color: var(--pink-color);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 1em;
+    font-weight: 500;
+    font-size: inherit;
+}
+input[type="submit"]:is(:hover, :active) {
+    background-color: var(--blue-color);
+    cursor: pointer;
+}
+/*ELSE*/
+.section {
+    align-items: start !important;
+    flex-wrap: wrap;
+    column-gap: 5em;
+}
+article {
+    flex-grow: 1;
+    max-width: 40ch;
+    & p {
+        text-align: justify;
+        margin: 1ch;
+    }
+}
+/*CLASSES*/
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.color-red {
+    color: red;
+}
+.yellow-background {
+    background-color: var(--yellow-color);
+    border-radius: 1em;
+    color: white;
+}
+.blue-background {
+    background-color: var(--blue-color);
+    border-radius: 1em;
+    color: white;
+}
+.green-background {
+    background-color: var(--green-color);
+}
+/*ACCUEIL*/
+#accueil {
+    & div.background-image {
+        gap: 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        background-image: url(./images/backgroundImage.png);
+        background-size: cover;
+        aspect-ratio: 3/1;
+
+        padding: 1em 0;      
+        width: min(1000px, 100%);
+        border-radius: 10px;
+        & h1 {
+            margin: 0;
+        }
+        & p {
+            text-align: center;
+            font-weight: 600; 
+        }
+    }
+}
+
+/*FORMATION*/
+#formation {
+    & p {
+        line-height: 1.3em;
+        margin-bottom: 2ch;
+    }
+}
+
+/*TEMOIGNAGES*/
+#temoignages {
+    & .section {
+        gap: 5em;
+        & article {
+            &.blue-background {
+                background-color: #418FDE20;
+                color: black;
+            }
+            &.yellow-background {
+                background-color: #FFD10020;
+                color: black;
+            }
+            & img {
+                display: block;
+                margin: 1em auto;
+                border-radius: 50%;        
+            }
+            h4 {
+                margin: 1em;
+            }
+            p {
+                line-height: 1.3em;
+            }
+        }
+    }
+}
+/*REFERENCES*/
+#references {
+    & div.yellow-background {
+        & img {
+            margin: 1em;
+        }
+    }
+}
+@media only screen and (max-width: 550px) {
+    #references div.yellow-background {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+/*CONTACT*/
+#contact {
+    & > div {
+        & > form {
+            background-color: #78BE2095;
+            border-radius: 20px;
+            padding: 1em;
+            & .bold {
+                display: block;
+                font-weight: 600;
+                &:nth-child(n+2) {
+                    margin-top: 1ch;
+                }
+            }
+            & input, select {
+                font-style: inherit;
+                font-size: inherit;
+                padding-left: 1ch;
+            }
+            & fieldset {
+                margin-top: 1ch;
+                border: none;
+            }
+        }
+    }
+    & > input[type="submit"] {
+        margin-top: 2em;
+    }
+}
+
+/*Hamburger*/
+nav {
+    & input {
+        opacity: 0;
+    }
+    & label {
+        display: flex; 
+        align-items: center;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 1;
+        & > span,
+        & > span::before,
+        & > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+            transition: 0.3s;
+        }
+        & > span::before {
+            content: '';
+            top: -8px;
+        }
+        & > span::after {
+            content: '';
+            top: 8px;
+        }
+    }
+}
+@media screen and (min-width:700px) {
+    nav {
+        & input, label {
+        display: none;
+        }
+    }
+}
+@media screen and (max-width: 700px){
+    nav {
+        & ul {
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        position: fixed;
+        right: -100%;
+        top: 100px;
+        transition: 0.3s;
+        background-color: #78BE20;
+        border-radius: 50px 0 0 50px;
+        padding: 1em;
+        }
+                
+        & input:checked ~ label > span {
+        transform: rotate(45deg);
+        }
+        & input:checked ~ label > span::before {
+        top: 0;
+        transform: rotate(0);
+        }
+        & input:checked ~ label > span::after {
+        top: 0;
+        transform: rotate(90deg);
+        }
+        
+        & input:checked ~ ul {
+        right: 0;
+        }
+    } 
+}

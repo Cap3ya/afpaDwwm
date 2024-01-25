@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwwm - Accueil</title>
+    <meta name="description" content="Site dédié à la formation Developpeur Web et Web Mobile délivrée par l'AFPA.">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <header class="flex-row">
+        <div class="flex-row">
+        <img 
+            src="./images/logo.jpeg"
+            alt="logo afpa" 
+            width="139" 
+            height="72"
+        >
+        <nav>
+            <input type="checkbox" id="toggle">
+            <label for="toggle"><span></span></label>
+
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/formation.html">
+                        Formation
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/temoignages.html">
+                        Témoignages
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/references.html">
+                        Références
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/contact.html">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <main id="accueil" class="flex-column">
+        <div class="background-image">
+            <h1>
+                Devenez développeur Web
+            </h1>
+            <p>
+                Une formation gratuite et rémunérée 
+                pour les demandeurs d'emploi
+            </p>
+        </div>
+        <form action="./pages/formation.html" method="get">
+            <input
+                type="submit"
+                value="Je découvre la formation" 
+            >
+        </form>
+    </main>
+    <footer>
+        <p>&copy; Copyright 2023. All right reserved.</p>
+    </footer>
+</body>
+</html>
